@@ -1,42 +1,42 @@
 require 'fun_with_strings'
 require 'byebug'
 
-describe 'palindrome detection' do
+#describe 'palindrome detection' do
   # The main concept being tested is class reopening
-  it 'should work for simple strings [10 points]' do
-    expect('redivider').to be_palindrome
-    expect('abracadabra').not_to be_palindrome
-  end
-  it 'should be case-insensitive [10 points]' do
-    expect('ReDivider').to be_palindrome
-  end
-  it 'should ignore nonword characters [10 points]' do
-    expect('A man, a plan, a canal -- Panama').to be_palindrome
-    expect("Madam, I'm Adam!").to be_palindrome
-  end    
-end
-
-#describe 'word count', :pending => true do
-#  it 'should return a hash [5 points]' do
-#    expect('now is the time'.count_words).to be_a_kind_of(Hash)
-#  end
-#  it 'works on simple strings [10 points]' do
-#    expect('Doo bee doo bee doo'.count_words).to be == {'doo' => 3, 'bee' => 2}
-#  end
-#  it 'ignores punctuation [5 points]' do
-#    expect('A man, a plan, a canal -- Panama!'.count_words).to be ==
-#      {'man' => 1, 'plan' => 1, 'canal' => 1, 'a' => 3, 'panama' => 1}
-#  end
-#  it 'works on the empty string [10 points]' do
-#    expect(''.count_words).to be == {}
-#  end
-#  it 'ignores leading whitespace [10 points]' do
-#    expect("  toucan".count_words).to be == {'toucan' => 1 }
-#  end
-#  it 'ignores embedded whitespace [10 points]' do
-#    expect("four   four  \n four \t four!".count_words).to be == {'four' => 4}
-#  end
+  #it 'should work for simple strings [10 points]' do
+  #  expect('redivider').to be_palindrome
+  #  expect('abracadabra').not_to be_palindrome
+  #end
+  #it 'should be case-insensitive [10 points]' do
+  #  expect('ReDivider').to be_palindrome
+  #end
+  #it 'should ignore nonword characters [10 points]' do
+  #  expect('A man, a plan, a canal -- Panama').to be_palindrome
+  #  expect("Madam, I'm Adam!").to be_palindrome
+  #end    
 #end
+
+describe 'word count' do
+  it 'should return a hash [5 points]' do
+    expect('now is the time'.count_words).to be_a_kind_of(Hash)
+  end
+  it 'works on simple strings [10 points]' do
+    expect('Doo bee doo bee doo'.count_words).to be == {'doo' => 3, 'bee' => 2}
+  end
+  it 'ignores punctuation [5 points]' do
+    expect('A man, a plan, a canal -- Panama!'.count_words).to be ==
+      {'man' => 1, 'plan' => 1, 'canal' => 1, 'a' => 3, 'panama' => 1}
+  end
+  it 'works on the empty string [10 points]' do
+    expect(''.count_words).to be == {}
+  end
+  it 'ignores leading whitespace [10 points]' do
+    expect("  toucan".count_words).to be == {'toucan' => 1 }
+  end
+  it 'ignores embedded whitespace [10 points]' do
+    expect("four   four  \n four \t four!".count_words).to be == {'four' => 4}
+  end
+end
 
 #describe 'anagram grouping', :pending => true do
 #  describe 'sanity checks' do
