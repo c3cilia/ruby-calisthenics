@@ -1,20 +1,19 @@
 require 'fun_with_strings'
 require 'byebug'
-
-#describe 'palindrome detection' do
-  # The main concept being tested is class reopening
-  #it 'should work for simple strings [10 points]' do
-  #  expect('redivider').to be_palindrome
-  #  expect('abracadabra').not_to be_palindrome
-  #end
-  #it 'should be case-insensitive [10 points]' do
-  #  expect('ReDivider').to be_palindrome
-  #end
-  #it 'should ignore nonword characters [10 points]' do
-  #  expect('A man, a plan, a canal -- Panama').to be_palindrome
-  #  expect("Madam, I'm Adam!").to be_palindrome
-  #end    
-#end
+# The main concept being tested is class reopening
+describe 'palindrome detection' do
+  it 'should work for simple strings [10 points]' do
+    expect('redivider').to be_palindrome
+    expect('abracadabra').not_to be_palindrome
+  end
+  it 'should be case-insensitive [10 points]' do
+    expect('ReDivider').to be_palindrome
+  end
+  it 'should ignore nonword characters [10 points]' do
+    expect('A man, a plan, a canal -- Panama').to be_palindrome
+    expect("Madam, I'm Adam!").to be_palindrome
+  end    
+end
 
 describe 'word count' do
   it 'should return a hash [5 points]' do
@@ -38,21 +37,20 @@ describe 'word count' do
   end
 end
 
-#describe 'anagram grouping', :pending => true do
-#  describe 'sanity checks' do
-#    it 'should work on the empty string [5 points]' do
-#      expect(''.anagram_groups).to eq([])
-#    end
-#    it 'should return an array of arrays for nonempty string [5 points]' do
-#      'x'.anagram_groups.each { |element| expect(element).to be_a_kind_of(Array) }
-#    end
-#  end
-#  it 'for "scream cars for four scar creams" [10 points]' do
-#    @anagrams =  'scream cars for four scar creams'.anagram_groups
-#    @anagrams.each { |group| group.sort! }
-#    [%w(cars scar), %w(four), %w(for), %w(creams scream)].each do |group|
-#        expect(@anagrams).to include(group)
-#    end
-#  end
-    
-#end
+describe 'anagram grouping' do
+  describe 'sanity checks' do
+    it 'should work on the empty string [5 points]' do
+      expect(''.anagram_groups).to eq([])
+    end
+    it 'should return an array of arrays for nonempty string [5 points]' do
+      'x'.anagram_groups.each { |element| expect(element).to be_a_kind_of(Array) }
+    end
+  end
+  it 'for "scream cars for four scar creams" [10 points]' do
+    @anagrams =  'scream cars cras for four scar creams'.anagram_groups
+    @anagrams.each { |group| group.sort! }
+    [%w(cars cras scar), %w(four), %w(for), %w(creams scream)].each do |group|
+        expect(@anagrams).to include(group)
+    end
+  end
+end

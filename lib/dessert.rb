@@ -1,17 +1,34 @@
+# This is testing instance variable inheritance 
 class Dessert
+  attr_accessor :calories
+  attr_accessor :name
   def initialize(name, calories)
-    # your code here
+    @calories = calories
+    @name = name
   end
   def healthy?
-    # your code here
+    if @name == "cake" 
+      return false
+    end 
+    true
   end
   def delicious?
-    # your code here
+    true
   end
 end
 
 class JellyBean < Dessert
-  def initialize(flavor)
-    # your code here
+  attr_accessor :flavor
+  def initialize(flavor, name="vanilla jelly bean ", calories=5)
+    super(name, calories)
+    @flavor = flavor
+  end
+
+  def delicious?
+    print name
+    if @flavor == "licorice"
+      return false
+    end
+    true
   end
 end
