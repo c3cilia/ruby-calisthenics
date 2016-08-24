@@ -27,7 +27,6 @@ module FunWithStrings
 end
 
 # make all the above functions available as instance methods on Strings:
-
 class String
   include FunWithStrings
 end
